@@ -1,0 +1,86 @@
+//common
+.bdr-rw{
+  border-right: 1px solid white;
+}
+.bdr-bw{
+  border-bottom: 1px solid white;
+}
+
+.open{
+  left: -20px;
+}
+.closed{
+  left: -2000px;
+}
+
+.navbar{
+  .nav{
+    padding: 0;
+    position: fixed;
+    top: -16px;
+    left: 0;
+    right: 0;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    li:nth-child(1){
+      flex-basis: 50%;
+      background: red;
+      text-align: left;
+      font-size: 20px;
+      &:hover{
+        background: red;
+      }
+        @media(max-width: 767px){
+          display: flex;
+          flex-basis: 100%;
+        }
+        .hidden-nav-button{
+          display: none;
+          position: relative;
+          transition: .3s;
+          @media(max-width: 767px){
+            display: block;
+            margin-right: 10px;
+            height: 24px;
+            width: 33px;
+          }
+          .hidden-nav{
+            display: none;
+            list-style: none;
+            background: blue;
+            position: absolute;
+            top: 45px;
+            width: 250px;
+            transition: all .4s ease;
+
+              @media(max-width: 767px){
+                display: block;
+                padding: 0;
+                li{
+                  display: block;
+                  background: transparent;
+                  text-align: center;
+                }
+              }
+          }
+        }
+    }
+    li{
+      cursor: pointer;
+      text-align: center;
+      flex-basis: 10%;
+      padding: 20px 20px;
+      background: red;
+      color: white;
+      transition: .3s;
+      &:hover{
+        background: #940000;
+      }
+        @media(max-width: 767px){
+          display: none;
+        }
+    }
+  }
+}

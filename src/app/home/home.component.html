@@ -1,0 +1,41 @@
+<div class="home-container">
+  <div class="bills">
+    <div class="billdata">
+      <h2 class="bills-header">Bills</h2>
+      <div class="bill" *ngFor="let bd of bill_data">
+        <div class="id">
+          {{bd.id}}.
+        </div>
+        <div class="name">
+          {{bd.name}}
+        </div>
+        <div class="amt">
+          Rs. {{bd.amt}}
+        </div>
+        <div class="date">
+          {{bd.date | date }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="last-bill">
+    <h2 class="latest-header">Latest Bill</h2>
+    <div class="bill" *ngFor="let lb of latest_bill">
+      <div class="name">
+        {{lb.name}}
+      </div>
+      <div class="date">
+        {{lb.date | date }}
+      </div>
+      <div class="amt">
+        Rs. {{lb.amt}}
+      </div>
+    </div>
+  </div>
+  <div class="total">
+    <h2 class="total-header">Total Expence</h2>
+    <div class="amt">
+      Rs. {{total}}
+    </div>
+  </div>
+</div>

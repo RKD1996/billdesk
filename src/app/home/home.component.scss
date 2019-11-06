@@ -1,0 +1,131 @@
+.home-container{
+  display: flex;
+  flex-wrap: wrap;
+  .bills, .last-bill{
+    flex-basis: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    .billdata{
+      height: 240px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: red;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #940000;
+      }
+      @media (min-width: 768px) and (max-width: 991px){
+        height: 640px;
+      }
+    }
+    .bills-header, .latest-header{
+      background: #ddd;
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+    }
+    .bill{
+      display: flex;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+      margin: 10px 0;
+      padding: 5px;
+      align-items: center;
+      .id{
+        flex-basis: 20%;
+        text-align: center;
+        font-size: 17px;
+      }
+      .name{
+        flex-basis: 40%;
+        text-align: center;
+        font-size: 17px;
+      }
+      .amt{
+        flex-basis: 20%;
+        text-align: center;
+        font-size: 17px;
+      }
+      .date{
+        flex-basis:20%;
+        text-align: center;
+        font-size: 17px;
+      }
+    }
+  }
+  .last-bill{
+    flex-basis: 45%;
+    padding: 20px;
+    border: none;
+    text-align: right;
+    @media (min-width: 768px) and (max-width: 991px){
+      flex-basis: 43%;
+    }
+    @media (max-width: 767px){
+      flex-basis: 100%;
+    }
+    .latest-header{
+      background: none;
+    }
+    .bill{
+      flex-wrap: wrap;
+      .name{
+        flex-basis: 43%;
+        font-size: 22px;
+        padding: 10px;
+      }
+      .date{
+        flex-basis: 43%;
+        font-size: 22px;
+        padding: 10px;
+      }
+      .amt{
+        flex-basis: 100%;
+        font-size: 40px;
+        padding: 10px;
+        @media (min-width: 768px) and (max-width: 991px){
+          font-size: 33px;
+        }
+      }
+    }
+  }
+  .total{
+    flex-basis:45%;
+    padding: 20px;
+    @media (max-width: 767px){
+      flex-basis: 100%;
+    }
+    @media (min-width: 768px) and (max-width: 991px){
+      flex-basis: 43%;
+    }
+    .total-header{
+      text-align: center;
+      margin: 0;
+      padding: 10px;
+    }
+    .amt{
+      text-align: center;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+      margin: 10px 0;
+      padding: 5px;
+      font-size: 92px;
+      @media (min-width: 768px) and (max-width: 991px){
+        font-size: 85px;
+      }
+      @media (max-width: 767px){
+        font-size: 50px;
+      }
+    }
+  }
+}
