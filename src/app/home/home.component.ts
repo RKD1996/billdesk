@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,54 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  bill_data=[
-    {
-      id: 1,
-      name: 'Food bill',
-      amt: 500.00,
-      date: new Date()
-    },
-    {
-      id: 2,
-      name: 'Hair cut',
-      amt: 150.00,
-      date: new Date()
-    },
-    {
-      id: 3,
-      name: 'Bike Petrol',
-      amt: 332.30,
-      date: new Date()
-    },
-    {
-      id: 4,
-      name: 'House Rent',
-      amt: 12000.00,
-      date: new Date()
-    },
-    {
-      id: 5,
-      name: 'Electricity Bill',
-      amt: 1500.00,
-      date: new Date()
-    }
-
-  ]
-  latest_bill = [
-    {
-      id: 1,
-      name: 'Electricity Bill',
-      amt: 1500.00,
-      date: new Date()
-    }
-  ]
-
-  total = 25630; 
+  bill_data: any = []
+  latest_bill: any = []
+  total;
 
 
-  constructor() { }
+  constructor(private netcall: HttpClient) { }
 
   ngOnInit() {
+    this.getData()
+  }
+
+  getData() {
+    this.netcall.get("http://localhost:3000/bils/show").subscribe(function (res) {
+      this.bill_data = res.bills;
+      this.latest_bill = res.latest;
+      this.total = res.total;
+      console.log(this.bill_data);
+      console.log(this.latest_bill);
+      console.log(this.total);
+    });
   }
 
 }
