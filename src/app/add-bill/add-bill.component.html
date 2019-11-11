@@ -2,17 +2,20 @@
     <h1 class="add_bill_header">List All Your Expences</h1>
     <div class="bill-form">
       <div class="name">
-        <label for="">Name Of Expence: <input type="text" name="" value=""></label>
+        <label for="">Name Of Expence: <input type="text" [(ngModel)]="exp.name" placeholder="Enter the Expense name"></label>
       </div>
       <div class="amt">
-        <label for="">Amout Spent : <input type="number" name="" value=""></label>
+        <label for="">Amout Spent : <input type="number" [(ngModel)]="exp.amt"></label>
       </div>
       <div class="date">
-        <label for="">At which Date: <input type="date" name="" value=""></label>
+        <label for="">At which Date: <input type="date" [(ngModel)]="exp.date" ></label>
       </div>
       <div class="save">
-        <button type="button" name="button">Add</button>
+        <button type="button" name="button" (click)="add()">Add</button>
       </div>
     </div>
-    <button type="button" name="button">Save</button>
+    <div class="" *ngFor="let item of final_data" >
+      {{item | json}}
+    </div>
+    <button type="button" name="button" (click)="save()">Save</button>
 </div>

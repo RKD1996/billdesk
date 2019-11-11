@@ -2,9 +2,10 @@
   <div class="bills">
     <div class="billdata">
       <h2 class="bills-header">Bills</h2>
+
       <div class="bill" *ngFor="let bd of bill_data">
         <div class="id">
-          {{bd.id}}.
+          {{bd.id}}
         </div>
         <div class="name">
           {{bd.name}}
@@ -20,15 +21,15 @@
   </div>
   <div class="last-bill">
     <h2 class="latest-header">Latest Bill</h2>
-    <div class="bill" *ngFor="let lb of latest_bill">
+    <div class="bill">
       <div class="name">
-        {{lb.name}}
+        {{latest_bill.name}}
       </div>
       <div class="date">
-        {{lb.date | date }}
+        {{latest_bill.updated_at | date }}
       </div>
       <div class="amt">
-        Rs. {{lb.amt}}
+        Rs. {{latest_bill.amt}}
       </div>
     </div>
   </div>
