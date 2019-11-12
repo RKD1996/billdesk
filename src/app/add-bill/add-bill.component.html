@@ -14,8 +14,34 @@
         <button type="button" name="button" (click)="add()">Add</button>
       </div>
     </div>
-    <div class="" *ngFor="let item of final_data" >
-      {{item | json}}
+    <div class="bill-view">
+      <div class="bill">
+        <div class="id">
+          <u>ID</u>
+        </div>
+        <div class="expname">
+          <u>Expence Name</u>
+        </div>
+        <div class="expamt">
+          <u>Amt.</u>
+        </div>
+        <div class="expdate">
+          <u>Date</u>
+        </div>
+      </div>
+      <div class="bill" *ngFor="let item of final_data; let i = index " >
+        <div class="id">
+          {{i + 1}}.
+        </div>
+        <div class="expname">
+          {{item.name}}
+        </div>
+        <div class="expamt">
+          Rs. {{item.amt}}
+        </div>
+        <div class="expdate">
+          {{item.date}}
+        </div>
+      </div>
     </div>
-    <button type="button" name="button" (click)="save()">Save</button>
 </div>

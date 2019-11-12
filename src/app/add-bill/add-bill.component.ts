@@ -24,18 +24,20 @@ export class AddBillComponent implements OnInit {
 
   add() {
     this.final_data.push(this.exp);
-    this.exp = {
-      name: '',
-      amt: Number,
-      date: Date
-    }
+    this.netcall.post('http://localhost:3000/bils/create_exp', {bils: this.exp}).subscribe(res => {
+      console.log(res)
+      this.exp = {
+        name: '',
+        amt: Number,
+        date: Date
+      }
+    });
     console.log(this.final_data);
   }
 
   save() {
-      this.netcall.post('http://localhost:3000/bils/create_exp', {exp: this.final_data}).subscribe(res => {
-        console.log(res)
-      });
+    console.log(this.final_data);
+
   }
 
 }

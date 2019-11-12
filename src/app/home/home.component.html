@@ -1,20 +1,35 @@
 <div class="home-container">
   <div class="bills">
+    <div class="search-param">
+      <label for="">Select A Month:
+        <select class="search" [(ngModel)]="month" >
+          <option value="1">January</option>
+          <option value="2">Febuary</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </label>
+      <button type="button" class="search-button" (click)="getMonthData(month)" name="button">search</button>
+    </div>
     <div class="billdata">
       <h2 class="bills-header">Bills</h2>
-
       <div class="bill" *ngFor="let bd of bill_data">
-        <div class="id">
-          {{bd.id}}
-        </div>
-        <div class="name">
+        <div class="expname">
           {{bd.name}}
         </div>
-        <div class="amt">
+        <div class="expamt">
           Rs. {{bd.amt}}
         </div>
-        <div class="date">
-          {{bd.updated_at | date }}
+        <div class="expdate">
+          {{myfilter(bd.date)}}
         </div>
       </div>
     </div>
@@ -22,20 +37,20 @@
   <div class="last-bill">
     <h2 class="latest-header">Latest Bill</h2>
     <div class="bill">
-      <div class="name">
+      <div class="expname">
         {{latest_bill.name}}
       </div>
-      <div class="date">
-        {{latest_bill.updated_at | date }}
+      <div class="expdate">
+        {{myfilter(latest_bill.date)}}
       </div>
-      <div class="amt">
+      <div class="expamt">
         Rs. {{latest_bill.amt}}
       </div>
     </div>
   </div>
   <div class="total">
-    <h2 class="total-header">Total Expence</h2>
-    <div class="amt">
+    <h2 class="total-header">Total Expence( Monthly )</h2>
+    <div class="expamt">
       Rs. {{total}}
     </div>
   </div>

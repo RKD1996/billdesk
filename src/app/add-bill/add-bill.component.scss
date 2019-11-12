@@ -46,4 +46,57 @@
         }
       }
   }
+  .bill-view{
+    height: 350px;
+    max-width: 800px;
+    padding: 10px;
+    margin: 10px auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: red;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #940000;
+    }
+    @media (min-width: 768px) and (max-width: 991px){
+      height: 640px;
+    }
+    .bill{
+      display: flex;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+      margin: 5px auto;
+      padding: 5px;
+      align-items: center;
+      max-width: 800px;
+      .id{
+        flex-basis: 10%;
+        text-align: center;
+        font-size: 17px;
+      }
+      .expname{
+        flex-basis: 50%;
+        text-align: center;
+        font-size: 17px;
+      }
+      .expamt{
+        flex-basis: 20%;
+        text-align: center;
+        font-size: 17px;
+      }
+      .expdate{
+        flex-basis:20%;
+        text-align: center;
+        font-size: 17px;
+      }
+    }
+  }
 }
