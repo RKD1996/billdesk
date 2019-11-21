@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TotalComponent implements OnInit {
 
+    month = new Date().getMonth();
+
   constructor() { }
 
   ngOnInit() {

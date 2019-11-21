@@ -12,6 +12,8 @@ import { TotalComponent } from './total/total.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     EditBillComponent,
     TotalComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

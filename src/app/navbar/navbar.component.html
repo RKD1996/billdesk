@@ -1,22 +1,26 @@
 <div class="navbar">
   <ul class="nav">
-    <li class="bdr-rw">
+    <li>
       <span (click)="togglenav()" class="hidden-nav-button">
         <i class="material-icons">menu</i>
         <ul class="hidden-nav" [ngClass]="status ? 'open' : 'closed'">
-          <li class="bdr-bw" [routerLink]="['']">Home</li>
-          <li class="bdr-bw" [routerLink]="['add_bill']">Add Bill</li>
-          <li class="bdr-bw" [routerLink]="['edit_bill']">Edit Bill</li>
-          <li class="bdr-bw" [routerLink]="['total']">Total Expence</li>
+          <li [routerLink]="['home']">Home</li>
+          <li [routerLink]="['add_bill']">Add Bill</li>
+          <li [routerLink]="['edit_bill']">Edit Bill</li>
+          <li [routerLink]="['total']">Total Expence</li>
           <li [routerLink]="['about']">About</li>
+          <li *ngIf="!isLogin"  [routerLink]="rout_path" (click)="user()">{{user_auth}}</li>
+          <li *ngIf="isLogin" (click)="logout()">{{user_auth}}</li>
         </ul>
       </span>
-      <span [routerLink]="['']">BILLDESK</span>
+      <span [routerLink]="['home']">BILLDESK</span>
     </li>
-    <li class="bdr-rw" [routerLink]="['']">Home</li>
-    <li class="bdr-rw" [routerLink]="['add_bill']">Add Bill</li>
-    <li class="bdr-rw" [routerLink]="['edit_bill']">Edit Bill</li>
-    <li class="bdr-rw" [routerLink]="['total']">Total Expence</li>
+    <li [routerLink]="['home']">Home</li>
+    <li [routerLink]="['add_bill']">Add Bill</li>
+    <li [routerLink]="['edit_bill']">Edit Bill</li>
+    <li [routerLink]="['total']">Total Expence</li>
     <li [routerLink]="['about']">About</li>
+    <li *ngIf="!isLogin"  [routerLink]="rout_path" (click)="user()">{{user_auth}}</li>
+    <li *ngIf="isLogin" (click)="logout()">{{user_auth}}</li>
   </ul>
 </div>

@@ -1,0 +1,12 @@
+.Exp{
+  .Exp-crate{
+    display: flex;
+    text-align: center;
+    .Exp-crate-year{
+      flex-basis: 50%;
+    }
+    .Exp-crate-month{
+      flex-basis: 50%;
+    }
+  }
+}

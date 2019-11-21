@@ -1,1 +1,61 @@
-<p>edit-bill works!</p>
+<div class="bills">
+  <div class="search-param">
+    <label for="">Select A Month:
+      <select class="search" [(ngModel)]="month" >
+        <option value="1">January</option>
+        <option value="2">Febuary</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </label>
+    <button type="button" class="search-button" (click)="getMonthData(month)" name="button">search</button>
+  </div>
+  <h2 class="bills-header">Bills</h2>
+  <div class="billdata">
+    <div class="bill" *ngFor="let bd of bill_data">
+      <div class="expname">
+        {{bd.name}}
+      </div>
+      <div class="expamt">
+        Rs. {{bd.amt}}
+      </div>
+      <div class="expdate">
+        {{myfilter(bd.date)}}
+      </div>
+      <div class="expedit">
+        <button type="button" name="button" (click)="editexp(bd)">edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="edit-form">
+  <h2 class="edit-form-header">Edit Form</h2>
+  <div class="form">
+    <div class="name-field">
+      <label for="">Edit the Name:
+        <input type="text" name="" value="" [(ngModel)]="bils.name" >
+      </label>
+    </div>
+    <div class="amt-field">
+      <label for="">edit Amt:
+        <input type="number" name="" value=""[(ngModel)]="bils.amt" >
+      </label>
+    </div>
+    <div class="date-field">
+      <label for="">Edit Date:
+        <input type="date" name="" value="" [(ngModel)]="bils.date" >
+      </label>
+    </div>
+    <div class="save-field">
+      <button type="button" name="button" (click)="saveEdit()">Save</button>
+    </div>
+  </div>
+</div>

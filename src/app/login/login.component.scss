@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.sign-up{
+  position: relative;
+  height: 89vh;
+  &::before{
+    content: ' ';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    clip-path: polygon(0 0, 75% 0, 75% 100%, 0% 100%);
+    background: -moz-linear-gradient(45deg, #FF0000 0%, #800000 50%, #ff0000 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #FF0000), color-stop(50%, #800000), color-stop(100%, #ff0000)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #FF0000 0%, #800000 50%, #ff0000 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #FF0000 0%, #800000 50%, #ff0000 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #FF0000 0%, #800000 50%, #ff0000 100%); /* ie10+ */
+    background: linear-gradient(45deg, #FF0000 0%, #800000 50%, #ff0000 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#FF0000',GradientType=1 ); /* ie6-9 */
+  }
+  .intro{
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    left: 25%;
+    h3{
+      color: white;
+      font-size: 65px;
+      margin: 0px;
+    }
+    p{
+      color: white;
+      font-size: 15px;
+      a{
+        color: white;
+        text-decoration: none;
+        b{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .sign-up-form{
+    position: absolute;
+    right: 13%;
+    top: 48%;
+    height: 250px;
+    transform: translateY(-50%);
+    background: white;
+    width: 20%;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    input{
+      padding: 13px 10px;
+      margin: 25px auto;
+      background: transparent;
+      display: block;
+      width: 100%;
+      max-width: 220px;
+      border: none;
+      border-bottom: 1px solid #969696 !important;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      &:focus{
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        outline: none;
+      }
+    }
+    button{
+      margin: 20px auto;
+      display: block;
+      padding: 10px 25px;
+      background: red;
+      color: white;
+      border: none;
+      font-family: 'Staatliches', cursive;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      &:hover{
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        outline-color: red;
+      }
+    }
+  }
+}
+
+.pass{
+  position: relative;
+  span{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
+  }
+}

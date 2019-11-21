@@ -19,8 +19,8 @@
       </label>
       <button type="button" class="search-button" (click)="getMonthData(month)" name="button">search</button>
     </div>
+  <h2 class="bills-header">Bills</h2>
     <div class="billdata">
-      <h2 class="bills-header">Bills</h2>
       <div class="bill" *ngFor="let bd of bill_data">
         <div class="expname">
           {{bd.name}}

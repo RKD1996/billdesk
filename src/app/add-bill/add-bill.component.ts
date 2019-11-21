@@ -11,7 +11,8 @@ export class AddBillComponent implements OnInit {
   exp = {
     name: String = '',
     amt: Number,
-    date: Date
+    date: Date,
+    username: localStorage.getItem('username')
   }
   final_data: any = [];
   constructor(private netcall: HttpClient) {
@@ -23,16 +24,17 @@ export class AddBillComponent implements OnInit {
   }
 
   add() {
+    this.exp.username = localStorage.getItem('username')
     this.final_data.push(this.exp);
     this.netcall.post('http://localhost:3000/bils/create_exp', {bils: this.exp}).subscribe(res => {
       console.log(res)
       this.exp = {
         name: '',
         amt: Number,
-        date: Date
+        date: Date,
+        username: localStorage.getItem('username')
       }
     });
-    console.log(this.final_data);
   }
 
   save() {

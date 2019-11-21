@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AjaxCallsService } from '../ajax-calls.service'
 
 @Component({
   selector: 'app-home',
@@ -23,35 +23,38 @@ export class HomeComponent implements OnInit {
   total;
   month;
 
+  user_id = localStorage.getItem('username');
 
-  constructor(private netcall: HttpClient) {
+
+  constructor(
+    private ajax: AjaxCallsService
+  ) {
 
    }
 
   ngOnInit() {
-    this.getData();
+    this.getBillData();
   }
 
   getMonthData(e){
-    console.log(e)
-    this.netcall.post("http://localhost:3000/bils/get_month_data", {mon: this.month}).subscribe( res => {
-      console.log(res)
+    this.ajax.postData("/bils/get_month_data/" + this.user_id, {mon: this.month}).subscribe( res => {
       this.bill_data = res.bills;
       this.latest_bill = res.latest;
       this.total = res.total;
+      this.month = res.month_code;
     });
   }
 
-  getData(){
-    this.netcall.get("http://localhost:3000/bils/show").subscribe( res => {
+  getBillData(){
+    this.ajax.getData("/bils/show/" + this.user_id ).subscribe( res => {
       this.bill_data = res.bills;
       this.latest_bill = res.latest;
       this.total = res.total;
+      this.month = res.month_code;
     });
   }
   ngAfterContentInit(){
-    console.log('hello')
-    this.getData();
+    this.getBillData();
   }
 
   myfilter(e){

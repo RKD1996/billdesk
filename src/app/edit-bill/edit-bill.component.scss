@@ -1,0 +1,145 @@
+.bills{
+  flex-basis: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  .search-param{
+    .search{
+        width: 95px;
+        height: 25px;
+        background: red;
+        color: white;
+        border-color: red;
+        font-family: 'Staatliches', cursive;
+        margin: 0 10px 10px 10px;
+    }
+    .search-button{
+        padding: 5px 10px;
+        background: red;
+        color: white;
+        border: none;
+        font-family: 'Staatliches', cursive;
+        border-radius: 5px;
+    }
+  }
+  .billdata{
+    height: 240px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 5px;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: red;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #940000;
+    }
+    @media (min-width: 768px) and (max-width: 991px){
+      height: 640px;
+    }
+  }
+  .bills-header, .latest-header{
+    background: #ddd;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
+  .bill{
+    display: flex;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+    padding: 5px;
+    align-items: center;
+    .expname{
+      flex-basis: 50%;
+      text-align: center;
+      font-size: 17px;
+    }
+    .expamt{
+      flex-basis: 20%;
+      text-align: center;
+      font-size: 17px;
+    }
+    .expdate{
+      flex-basis:20%;
+      text-align: center;
+      font-size: 17px;
+    }
+    .expedit{
+      flex-basis:10%;
+      text-align: center;
+      button{
+        background: white;
+        border: none;
+        color: red;
+        font-size: 17px;
+        font-family: 'Staatliches', cursive;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.edit-form{
+  text-align: center;
+  .edit-form-header{
+    background: #ddd;
+  }
+  .form{
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 767px){
+      text-align: right;
+    }
+    input{
+      height: 27px;
+      width: 240px;
+      text-align: center;
+      border-radius: 5px;
+      border-color: red;
+    }
+    .name-field{
+      flex-basis:25%;
+      @media (max-width: 767px){
+        flex-basis: 100%;
+        margin: 5px 0px;
+      }
+    }
+    .amt-field{
+      flex-basis:25%;
+      @media (max-width: 767px){
+        flex-basis: 100%;
+        margin: 5px 0px;
+      }
+    }
+    .date-field{
+      flex-basis:25%;
+      @media (max-width: 767px){
+        flex-basis: 100%;
+        margin: 5px 0px;
+      }
+    }
+    .save-field{
+      flex-basis:25%;
+      @media (max-width: 767px){
+        flex-basis: 100%;
+        margin: 5px 0px;
+      }
+      button{
+        height: 29px;
+        width: 50%;
+        color: white;
+        background: red;
+        border: none;
+        font-family: 'Staatliches', cursive;
+        border-radius: 5px;
+      }
+    }
+  }
+}
