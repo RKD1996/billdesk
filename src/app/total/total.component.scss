@@ -1,12 +1,75 @@
+google-chart {
+    margin: 0 auto;
+}
+
+.bdr{
+  border: 1px solid black;
+}
+
 .Exp{
   .Exp-crate{
     display: flex;
     text-align: center;
     .Exp-crate-year{
-      flex-basis: 50%;
+      flex-basis: 40%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      select{
+        width: 95px;
+        height: 25px;
+        background: red;
+        color: white;
+        border-color: red;
+        font-family: 'Staatliches', cursive;
+        margin: 0 0px 0px 10px;
+      }
     }
     .Exp-crate-month{
-      flex-basis: 50%;
+      flex-basis: 40%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      select{
+        width: 95px;
+        height: 25px;
+        background: red;
+        color: white;
+        border-color: red;
+        font-family: 'Staatliches', cursive;
+        margin: 0 0px 0px 10px;
+      }
+      .reset{
+        padding: 3px;
+        background: red;
+        height: 30px;
+        width: 30px;
+        color: white;
+        margin-left: 10px;
+        border: none;
+        font-family: "Staatliches", cursive;
+        border-radius: 5px;
+      }
     }
+    .search{
+      flex-basis: 20%;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button{
+        padding: 5px 10px;
+        background: red;
+        color: white;
+        border: none;
+        font-family: 'Staatliches', cursive;
+        border-radius: 5px;
+      }
+    }
+  }
+  .Exp-result{
+    text-align: center;
   }
 }

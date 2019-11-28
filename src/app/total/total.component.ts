@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AjaxCallsService } from '../ajax-calls.service'
 @Component({
   selector: 'app-total',
   templateUrl: './total.component.html',
@@ -7,11 +8,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TotalComponent implements OnInit {
 
-    month = new Date().getMonth();
+    month_select = new Date().getMonth() + 1;
+    user_id = localStorage.getItem('username');
+    month_data;
+    year_data;
+    year_select = new Date().getFullYear();
+    title = 'Total spending in the above selected';
+     type = 'ColumnChart';
+     data = [];
+     columnNames = ['Spending', 'Total'];
+     options = {
+     };
+     width = 650;
+     height = 450;
 
-  constructor() { }
+  constructor(
+    private ajax: AjaxCallsService
+  ) { }
 
   ngOnInit() {
+    console.log(this.month_select)
+    this.get_data();
+    this.get_analyze_data();
+  }
+
+  monthname(e) {
+    let monthdata = {
+      '01': 'Jan',
+      '02': 'Feb',
+      '03': 'Mar',
+      '04': 'Apr',
+      '05': 'May',
+      '06': 'Jun',
+      '07': 'Jul',
+      '08': 'Aug',
+      '09': 'Sep',
+      '10': 'Oct',
+      '11': 'Nov',
+      '12': 'Dec'
+    }
+    return monthdata[e];
+  }
+
+  search() {
+    console.log(this.year_select, this.month_select);
+      this.get_analyze_data();
+  }
+
+  get_data(){
+    this.ajax.getData('/get_month_and_year_data/' + this.user_id).subscribe(res => {
+      this.month_data = res.month;
+      this.year_data = res.year;
+    })
+  }
+
+  get_analyze_data(){
+    this.ajax.getData('/get_monthly_data/' + this.user_id + '&' + this.month_select + '&' + this.year_select).subscribe(res => {
+      this.data = res.weekly_data
+      console.log(res.weekly_data);
+    })
   }
 
 }

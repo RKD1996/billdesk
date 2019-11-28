@@ -2,25 +2,31 @@
   <h2>Total Expence</h2>
   <div class="Exp-crate">
     <div class="Exp-crate-month">
-      <label for="">Select A Month:
-        <select class="search" [(ngModel)]="month" >
-          <option value="1">January</option>
-          <option value="2">Febuary</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
-      </label>
+      <label for="">Select A Month: </label>
+      <select id="year" class="" name="" [(ngModel)]="month_select" >
+        <option [value]="yy" *ngFor="let yy of month_data" >{{monthname(yy)}}</option>
+      </select>
+
     </div>
     <div class="Exp-crate-year">
-      <button type="button" name="button">This Year</button>
+      <label for="year">Select a year: </label>
+      <select id="year" class="" name="" [(ngModel)]="year_select" >
+        <option [value]="yy" *ngFor="let yy of year_data" >{{yy}}</option>
+      </select>
     </div>
+    <div class="search">
+      <button type="button" name="button" (click)="search()">Search</button>
+    </div>
+  </div>
+  <div class="Exp-result">
+    <google-chart #chart
+       [title]="title"
+       [type]="type"
+       [data]="data"
+       [columnNames]="columnNames"
+       [options]="options"
+       [width]="width"
+       [height]="height">
+    </google-chart>
   </div>
 </div>

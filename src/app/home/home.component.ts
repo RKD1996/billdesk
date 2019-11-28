@@ -8,7 +8,6 @@ import { AjaxCallsService } from '../ajax-calls.service'
 })
 export class HomeComponent implements OnInit {
 
-
   bill_data: any = [{
     id: Number,
     name: String,
@@ -64,6 +63,4 @@ export class HomeComponent implements OnInit {
     let yy = new Date(e).getFullYear();
     return (m + " "  + dd + ", " + yy);
   }
-
-
 }

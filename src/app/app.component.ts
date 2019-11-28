@@ -35,10 +35,9 @@ export class AppComponent implements AfterContentChecked {
     } else {
       isLogged = true;
       if(isLogged && (this.router.url == '/' || this.router.url == '/sign-up')){
-          console.log('gone home')
           this.router.navigateByUrl('/home');
       } else  if(this.router.url != '/' && this.router.url != '/sign-up'){
-        console.log(this.router.url);
+        //
       }
     }
   }
