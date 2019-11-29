@@ -6,7 +6,6 @@
       <select id="year" class="" name="" [(ngModel)]="month_select" >
         <option [value]="yy" *ngFor="let yy of month_data" >{{monthname(yy)}}</option>
       </select>
-
     </div>
     <div class="Exp-crate-year">
       <label for="year">Select a year: </label>
@@ -23,7 +22,6 @@
        [title]="title"
        [type]="type"
        [data]="data"
-       [columnNames]="columnNames"
        [options]="options"
        [width]="width"
        [height]="height">

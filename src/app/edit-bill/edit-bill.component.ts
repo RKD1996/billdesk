@@ -52,7 +52,7 @@ export class EditBillComponent implements OnInit {
   saveEdit(){
     this.ajax.postData('/bils/edit_expence/', this.bils).subscribe(res => {
       console.log(res);
-      this.getData();
+      this.getMonthData(this.month);
     });
   }
 

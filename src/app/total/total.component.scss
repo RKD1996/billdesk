@@ -5,13 +5,19 @@ google-chart {
 .bdr{
   border: 1px solid black;
 }
-
+.chart {
+  width: 100%;
+}
 .Exp{
   .Exp-crate{
     display: flex;
     text-align: center;
+    flex-wrap: wrap;
     .Exp-crate-year{
       flex-basis: 40%;
+      @media(max-width: 767px){
+        flex-basis: 100%;
+      }
       padding: 10px;
       display: flex;
       align-items: center;
@@ -28,6 +34,9 @@ google-chart {
     }
     .Exp-crate-month{
       flex-basis: 40%;
+      @media(max-width: 767px){
+        flex-basis: 100%;
+      }
       padding: 10px;
       display: flex;
       align-items: center;
@@ -54,7 +63,10 @@ google-chart {
       }
     }
     .search{
-      flex-basis: 20%;
+      flex-basis: 15%;
+      @media(max-width: 767px){
+        flex-basis: 100%;
+      }
       padding: 10px;
       display: flex;
       align-items: center;
@@ -71,5 +83,7 @@ google-chart {
   }
   .Exp-result{
     text-align: center;
+    z-index: -1;
+    position: relative;
   }
 }
