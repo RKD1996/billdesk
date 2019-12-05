@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     AppRoutingModule,
     FormsModule,
     GoogleChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
