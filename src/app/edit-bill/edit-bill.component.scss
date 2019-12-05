@@ -99,7 +99,7 @@
     }
     input{
       height: 27px;
-      width: 240px;
+      width: 70%;
       text-align: center;
       border-radius: 5px;
       border-color: red;
@@ -108,28 +108,28 @@
       flex-basis:25%;
       @media (max-width: 767px){
         flex-basis: 100%;
-        margin: 5px 0px;
+        margin: 5px 20px;
       }
     }
     .amt-field{
       flex-basis:25%;
       @media (max-width: 767px){
         flex-basis: 100%;
-        margin: 5px 0px;
+        margin: 5px 20px;
       }
     }
     .date-field{
       flex-basis:25%;
       @media (max-width: 767px){
         flex-basis: 100%;
-        margin: 5px 0px;
+        margin: 5px 20px;
       }
     }
     .save-field{
       flex-basis:25%;
       @media (max-width: 767px){
         flex-basis: 100%;
-        margin: 5px 0px;
+        margin: 5px 20px;
       }
       button{
         height: 29px;

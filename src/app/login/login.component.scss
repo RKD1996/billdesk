@@ -24,6 +24,9 @@
   .intro{
     position: absolute;
     top: 43%;
+    @media(max-width: 767px){
+      top: 15%;
+    }
     transform: translateY(-50%);
     left: 25%;
     h3{
@@ -44,6 +47,9 @@
     }
   }
   .sign-up-form{
+    @media(max-width: 767px){
+      width: 70%;
+    }
     position: absolute;
     right: 13%;
     top: 48%;

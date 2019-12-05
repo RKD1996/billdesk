@@ -5,6 +5,7 @@
   .bill-form{
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       .name{
         padding: 5px;
         input{
