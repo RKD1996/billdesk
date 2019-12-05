@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.about-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  .about-content{
+    border-right: 1px solid #ddd;
+    margin-top: 20px;
+    flex-basis: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    div, p {
+      flex-basis: 100%;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  .about-text{
+    flex-basis: 59%;
+    text-align: center;
+    margin: auto 0;
+    p{
+      padding: 0 30px;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+}

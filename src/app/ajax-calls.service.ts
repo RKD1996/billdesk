@@ -6,7 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AjaxCallsService {
 
-  local_url = "http://localhost:3000";
+  prod = false;
+
+  local_url = (this.prod==true)?"https://evening-sands-00730.herokuapp.com":"http://localhost:3000";
 
   constructor(private netcall: HttpClient) { }
 

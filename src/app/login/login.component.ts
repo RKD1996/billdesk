@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AjaxCallsService } from '../ajax-calls.service';
 import {Router} from '@angular/router';
 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,9 +29,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(e){
-    this.ajax.postData('/users/login', e).subscribe(res => {
+    this.ajax.postData('/users/login', e).subscribe((res:any) => {
       if(res.success){
         localStorage.setItem("username", res.username)
+        localStorage.setItem("name", res.name)
+        localStorage.setItem("email", res.mail)
+        localStorage.setItem("mob", res.ph_no)
         localStorage.setItem("token", res.token)
         this.router.navigateByUrl('/home');
       } else {
@@ -44,6 +49,7 @@ export class LoginComponent implements OnInit {
       }
     })
   }
+
 
   changeIcon(){
     this.isActive = !this.isActive

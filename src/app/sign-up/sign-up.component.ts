@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
 
   signUp(e){
     console.log(e);
-    this.ajax.postData('/users', e).subscribe(res=> {
+    this.ajax.postData('/users', e).subscribe((res:any)=> {
       if(res.success){
         this.router.navigateByUrl('/');
       }

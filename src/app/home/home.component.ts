@@ -8,13 +8,13 @@ import { AjaxCallsService } from '../ajax-calls.service'
 })
 export class HomeComponent implements OnInit {
 
-  bill_data: any = [{
+  bill_data = [{
     id: Number,
     name: String,
     amt: Number,
     date: Date
   }]
-  latest_bill: any = {
+  latest_bill = {
     name: '',
     amt: '',
     date: Date
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   getMonthData(e){
-    this.ajax.postData("/bils/get_month_data/" + this.user_id, {mon: this.month}).subscribe( res => {
+    this.ajax.postData("/bils/get_month_data/" + this.user_id, {mon: this.month}).subscribe( (res:any) => {
       this.bill_data = res.bills;
       this.latest_bill = res.latest;
       this.total = res.total;
@@ -45,7 +45,8 @@ export class HomeComponent implements OnInit {
   }
 
   getBillData(){
-    this.ajax.getData("/bils/show/" + this.user_id ).subscribe( res => {
+    this.ajax.getData("/bils/show/" + this.user_id ).subscribe( (res:any) => {
+      console.log(res);
       this.bill_data = res.bills;
       this.latest_bill = res.latest;
       this.total = res.total;

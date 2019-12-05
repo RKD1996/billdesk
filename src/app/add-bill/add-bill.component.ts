@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AjaxCallsService } from '../ajax-calls.service'
 
 
 @Component({
@@ -9,13 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddBillComponent implements OnInit {
   exp = {
-    name: String = '',
+    name: '',
     amt: Number,
     date: Date,
     username: localStorage.getItem('username')
   }
   final_data: any = [];
-  constructor(private netcall: HttpClient) {
+  constructor(private ajax: AjaxCallsService) {
 
   }
 
@@ -26,7 +27,7 @@ export class AddBillComponent implements OnInit {
   add() {
     this.exp.username = localStorage.getItem('username')
     this.final_data.push(this.exp);
-    this.netcall.post('http://localhost:3000/bils/create_exp', {bils: this.exp}).subscribe(res => {
+    this.ajax.postData('/bils/create_exp', {bils: this.exp}).subscribe((res:any) => {
       console.log(res)
       this.exp = {
         name: '',

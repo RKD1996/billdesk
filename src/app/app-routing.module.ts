@@ -9,7 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 const routes: Routes = [
   {
@@ -40,7 +40,10 @@ const routes: Routes = [
     path: 'sign-up',
     component: SignUpComponent
   },
-
+  {
+    path: 'reset',
+    component: ResetpasswordComponent
+  },
 
 
 

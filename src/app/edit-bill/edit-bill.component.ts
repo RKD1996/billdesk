@@ -8,12 +8,12 @@ import { AjaxCallsService } from '../ajax-calls.service'
   styleUrls: ['./edit-bill.component.scss']
 })
 export class EditBillComponent implements OnInit {
-  bils: any = {
+  bils = {
     name: '',
     amt: Number,
     date: Date
   };
-  bill_data: any = [{
+  bill_data = [{
     id: Number,
     name: String,
     amt: Number,
@@ -33,14 +33,14 @@ export class EditBillComponent implements OnInit {
   }
 
   getData(){
-    this.ajax.getData("/bils/show/" + this.user_id).subscribe(res => {
+    this.ajax.getData("/bils/show/" + this.user_id).subscribe((res:any) => {
       this.bill_data = res.bills;
       this.month = res.month_code;
     })
   }
 
   getMonthData(e){
-    this.ajax.postData('/bils/get_month_data/' + this.user_id, {mon: this.month}).subscribe(res => {
+    this.ajax.postData('/bils/get_month_data/' + this.user_id, {mon: this.month}).subscribe((res:any) => {
       this.bill_data = res.bills;
       this.month = res.month_code;
     });
@@ -50,7 +50,7 @@ export class EditBillComponent implements OnInit {
     this.bils = e;
   }
   saveEdit(){
-    this.ajax.postData('/bils/edit_expence/', this.bils).subscribe(res => {
+    this.ajax.postData('/bils/edit_expence/', this.bils).subscribe((res:any) => {
       console.log(res);
       this.getMonthData(this.month);
     });

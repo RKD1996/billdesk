@@ -122,8 +122,13 @@
               "devServerTarget": "billdesk:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "billdesk"
 }

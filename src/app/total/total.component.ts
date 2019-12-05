@@ -67,7 +67,7 @@ export class TotalComponent implements OnInit, OnChanges {
   }
 
   get_data(){
-    this.ajax.getData('/get_month_and_year_data/' + this.user_id).subscribe(res => {
+    this.ajax.getData('/get_month_and_year_data/' + this.user_id).subscribe((res:any) => {
       localStorage.setItem('cald_data', JSON.stringify(res));
       this.month_data = res.month;
       this.year_data = res.year;
@@ -75,7 +75,7 @@ export class TotalComponent implements OnInit, OnChanges {
   }
 
   get_analyze_data(){
-    this.ajax.getData('/get_monthly_data/' + this.user_id + '&' + this.month_select + '&' + this.year_select).subscribe(res => {
+    this.ajax.getData('/get_monthly_data/' + this.user_id + '&' + this.month_select + '&' + this.year_select).subscribe((res:any) => {
       this.data = res.weekly_data
       this.title = 'Total spending in the ' + this.monthname(this.month_select) + ' ' + this.year_select;
     })

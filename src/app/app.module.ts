@@ -15,7 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +28,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AboutComponent,
     NotFoundComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ResetpasswordComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    GoogleChartsModule
+    GoogleChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
